@@ -3,9 +3,9 @@ const logger = require('log4js').getLogger('Express Mounting Routes')
 
 function convertJsonDocToRoutesDescriptor (handler) {
     const jsDocsOfFile = handler.toString().match(/\/\*\*([\s\S]*?)\*\//g)
+    if (!jsDocsOfFile) return
 
     const routesDescriptor = []
-
     for (const jsDoc of jsDocsOfFile) {
         const doc = doctrine.parse(jsDoc, { unwrap: true })
         routesDescriptor.push(doc)

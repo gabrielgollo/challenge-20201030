@@ -3,4 +3,4 @@ const handlers = {
     '': require('./main.handler')
 }
 
-module.exports = handlers
+module.exports = { handlers }
