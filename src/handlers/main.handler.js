@@ -1,3 +1,5 @@
+const MainController = require('../controller/main.controller')
+
 class MainHandler {
     /**
      * @api
@@ -10,7 +12,8 @@ class MainHandler {
      * @param {import("express").NextFunction} next
      */
     static main (req, res, next) {
-        res.status(200).json({ message: 'Default handler' })
+        const message = MainController.main()
+        res.status(200).json({ message: 'Default handler', ...message })
     }
 }
 

@@ -5,7 +5,7 @@ module.exports = morgan(
     'tiny',
     {
         stream: {
-            write: (message, a) => {
+            write: (message) => {
                 logger.debug(message.trim())
             }
         }

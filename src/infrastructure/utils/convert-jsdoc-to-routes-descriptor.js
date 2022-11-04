@@ -35,6 +35,7 @@ function mountExpressRoute ({ routerDescriptor, router, handler }) {
 
         if (isApi && path && method && functionToCall) {
             router[method](path, handler[functionToCall])
+            logger.info(`generate ${path} ${method.toUpperCase()} with - success`)
         } else {
             logger.warn('Invalid route descriptor', route)
         }

@@ -1,6 +1,9 @@
 class MainController {
-    static main (req, res, next) {
-        res.status().send('Hello World!')
+    static getCronStats () {
+        return {
+            message: 'Default controller',
+            status: 200
+        }
     }
 }
 

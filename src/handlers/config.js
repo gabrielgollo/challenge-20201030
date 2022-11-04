@@ -1,5 +1,5 @@
 const handlers = {
-    product: require('./product.handler'),
+    product: require('./products.handler'),
     '': require('./main.handler')
 }
 

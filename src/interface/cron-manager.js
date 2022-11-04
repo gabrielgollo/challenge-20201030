@@ -4,6 +4,7 @@ class CronManager {
     constructor (tasks) {
         this.tasks = tasks
         this.lastExecution = null
+        this.cron = null
     }
 
     start () {
@@ -13,10 +14,6 @@ class CronManager {
                 if (typeof task?.task === 'function') task?.task()
             })
         })
-    }
-
-    get lastExecution () {
-        return this.lastExecution
     }
 }
 
