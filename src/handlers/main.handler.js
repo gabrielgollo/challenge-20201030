@@ -6,14 +6,11 @@ class MainHandler {
      * @path /
      * @method get
      * @function main
-     * @description That's the default '/' route using method get
-     * @param {import("express").Request} req
-     * @param {import("express").Response} res
-     * @param {import("express").NextFunction} next
+     * @description That's the default '/' route using method get to show cron stats
      */
-    static main (req, res, next) {
-        const message = MainController.main()
-        res.status(200).json({ message: 'Default handler', ...message })
+    static main () {
+        const message = MainController.getCronStats()
+        return message
     }
 }
 
